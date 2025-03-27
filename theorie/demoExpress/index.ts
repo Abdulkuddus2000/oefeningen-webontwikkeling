@@ -8,4 +8,8 @@ app.get("/", (req, res) => {
     res.render("index");
 });
 
+app.get("/info", (req, res) => {
+    res.render("info");
+});
+
 app.listen(app.get("port"), () => console.log("[server] http://localhost:" +app.get("port")));
