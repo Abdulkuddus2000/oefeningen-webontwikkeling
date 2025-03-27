@@ -7,16 +7,21 @@
     <title>Hello world!</title>
 </head>
 <body>
-    <%
-        let firstname = "John";
-        let lastname = "Smith";
-        let age = Math.random() * 100;
-    %>
+    <h1>People</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Age</th>
+        </tr>
 
-    <h1>Hi</h1>
-    <p>
-        My name is <% firstname%> <% lastname %>
-        and I'm <% Math.floor(age) %> years old.
-    </p>
+        <% for(let person of persons) { %>
+            <tr>
+                <td><%= person.name %></td>
+                <td><%= person.city %></td>
+                <td><%= person.age %></td>
+            </tr>
+        <% } %>
+    </table>
 </body>
 </html>
