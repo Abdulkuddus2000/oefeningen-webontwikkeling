@@ -1,0 +1,25 @@
+# omgevingsvariabelen
+.env
+
+#dependency-mappen
+node_modules/
+
+#logbestanden
+npm-debig.log*
+yarn-debug.log*
+yarn-error.log*
+
+#typescript build-output
+dist/
+out/
+
+#editor-specifieke bestanden
+.vscode/
+.idea/
+
+# Jest test-output
+coverage/
+
+# cache bestanden
+*.log
+.cache/
