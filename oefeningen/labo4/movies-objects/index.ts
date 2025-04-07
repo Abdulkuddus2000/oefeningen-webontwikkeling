@@ -56,4 +56,8 @@ console.log("Actors:", myWorstMovie.actors.join(", "));
 console.log("Metascore:", myWorstMovie.metascore);
 console.log("Seen:", myWorstMovie.seen ? "Yes" : "No");
 
+let wasMovieMadeInThe90s = (movie: Movie): boolean => {
+    return (1990 <= movie.year && movie.year <= 2000);
+}
+
 export {}
