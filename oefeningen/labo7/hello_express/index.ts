@@ -14,6 +14,12 @@ app.set("views", path.join(__dirname, "views"));
 
 app.set("port", process.env.PORT ?? 3000);
 
+const thisisme = {
+    name: "Abdulkuddus",
+    age: 25,
+    profilePicture: "assets/images/Profielfoto.jpg"
+};
+
 app.get("/", (req, res) => {
     res.type("text/html");
     res.send(`
@@ -30,17 +36,39 @@ app.get("/", (req, res) => {
 });
 
 app.get("/whoami", (req, res) => {
-    interface Person{
-        name: string;
-        age: number;
-        profilePic: string;
-    }
-
-    
+    res.type("text/html");
+    res.send(`
+        <html>
+            <body>
+                <p>
+                    My name is ${thisisme.name} and I am ${thisisme.age} years old.
+                    <img src="${thisisme.profilePicture}" style="height: 100px;">
+                </p>
+            </body>
+        </html>    
+    `);
 });
 
+
+
 app.get("/whoamijson", (req, res) => {
-    
+    res.json(thisisme);
+});
+
+
+const pikachu = fetch("https://pokeapi.co");
+
+
+app.get("/pikachujson", async(req, res) => {
+    const response = await fetch("https://pokeapi.co/api/vs/pokemon/pikachu");
+    const pikachu: Pokemon
+    res.json(pikachu);
+
+});
+
+app.get("/pikachuhtml", async (req, res) => {
+    const response = await fetch("https://pokeapi.co/api/vs/pokemon/pikachu");
+
 });
 
 app.listen(app.get("port"), () => {
