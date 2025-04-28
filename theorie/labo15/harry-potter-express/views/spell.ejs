@@ -1,0 +1,15 @@
+<%- include("partials/header") %>
+
+<div class="spell">
+    <% for (const field of fields) { %>
+        <div><%= spell[field] %></div>
+    <% } %>
+
+    <!-- <div><%= spell.id %></div>
+    <div><%= spell.name %></div>
+    <div><%= spell.type %></div>
+    <div><%= spell.mana %></div>
+    <div><%= spell.description %></div> -->
+</div>
+
+<%- include("partials/footer") %>

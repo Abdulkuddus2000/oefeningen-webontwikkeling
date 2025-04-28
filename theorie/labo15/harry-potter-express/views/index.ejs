@@ -1,0 +1,28 @@
+<%- include("partials/header") %>
+
+<form method="get" action="/">
+    <input type="search" name="q" id="search" value="<%= q %>">
+    <button type="submit">search</button>
+</form>
+
+    <table>
+        <thead>
+            <% for (const field of fields) { %>
+                <th><a href="/?q=<%= q  %>&sortField=<%= field %>&sortDirection=<%= sortDirection === -1 ? 1 : -1 %>"><%= field %></a></th>
+            <% } %>
+        </thead>
+
+        <tbody>
+            <% for (const spell of spells) { %>
+                <tr>
+                    <td><%= spell.id %></td>
+                    <td><a href="/spells/<%= spell.id %>"><%= spell.name %></a></td>
+                    <td><%= spell.type %></td>
+                    <td><%= spell.mana %></td>
+                    <td><%= spell.description %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+    <%- include("partials/footer") %>
