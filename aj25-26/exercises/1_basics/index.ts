@@ -62,21 +62,71 @@ totaal = bedrag * (1 + (interest / 100))^jaren
 // console.log(`This is ${hours} houres and ${minutes} minutes`);
 
 // oefening 6 - wisselgeld
-// let value: number = rl.questionInt("Give the value: ");
-let value: number = 123;
-let briefjes_100: number = value % 100;
-let briefjes_50: number = (value - briefjes_100) % 50;
-let briefjes_20: number = (briefjes_100 - briefjes_50) % 20;
-let briefjes_10: number = (briefjes_50 - briefjes_20) % 10;
-let briefjes_5: number = (briefjes_20 - briefjes_10) % 5;
-let muntjes_2: number = (briefjes_10 - briefjes_5) % 2;
-let muntjes_1: number = (briefjes_5 - muntjes_2) % 1;
 
-console.log(`briefje van 100: ${briefjes_100}`);
-console.log(`briefje van 50: ${briefjes_50}`);
-console.log(`briefje van 20: ${briefjes_20}`);
-console.log(`briefje van 10: ${briefjes_10}`);
-console.log(`briefje van 5: ${briefjes_5}`);
-console.log(`muntje van 2: ${muntjes_2}`);
-console.log(`muntje van 1: ${muntjes_1}`);
+// let amount: number = rl.questionInt("Geef het bedrag in: ");
 
+// let amounts: number[] = [];
+
+// let fivehundred : number = Math.floor(amount / 500);
+// amount -= fivehundred * 500;
+// amounts[0] = fivehundred;
+
+// let twohundred : number = Math.floor(amount / 200);
+// amount -= twohundred * 200;
+// amounts[1] = twohundred;
+
+// let hundred: number = Math.floor(amount / 100);
+// amount -= hundred * 100;
+// amounts[2] = hundred;
+
+// let fifty: number = Math.floor(amount / 50);
+// amount -= fifty * 50;
+// amounts[3] = fifty;
+
+// let twenty : number = Math.floor(amount / 20);
+// amount -= twenty * 20;
+// amounts[4] = twenty;
+
+// let ten : number = Math.floor(amount / 10);
+// amount -= ten * 10;
+// amounts[5] = ten;
+
+// let five: number = Math.floor(amount / 5);
+// amount -= five * 5;
+// amounts[6] = five;
+
+// let two : number = Math.floor(amount / 2);
+// amount -= two * 2;
+// amounts[7] = two;
+
+// let one : number = Math.floor(amount / 1);
+// amount -= one * 1;
+// amounts[8] = one;
+
+// console.log(`Dit is een ${amounts[0]} briefjes van 500, ${amounts[1]} briefjes van 200, ${amounts[2]} briefjes van 100, ${amounts[3]} briefjes van 50, ${amounts[4]} briefjes van 20, ${amounts[5]} briefjes van 10, ${amounts[6]} briefjes van 5, ${amounts[7]} muntjes van 2, ${amounts[8]} muntjes van 1`);
+
+
+// oefening 7 - name from email
+
+let new_email_bool;
+do {
+    let email: string = rl.question("Whats your email: ");
+    let new_email;
+
+    let first_letter = email[0].toUpperCase() + ".";
+    let dot_location = email.indexOf(".");
+    let lastname = email.substring(dot_location+1, email.indexOf("@"));
+
+    email = rl.question("Whats your email: ");
+    first_letter = email[0].toUpperCase() + ".";
+    dot_location = email.indexOf(".");
+    lastname = email.substring(dot_location+1, email.indexOf("@"));
+
+    console.log("De naam is " + first_letter + " " + lastname.substring(0, 1).toUpperCase() + lastname.substring(1));
+    new_email = rl.keyInYN("Do you want to enter a new email adress? ")
+    if (new_email === "y") {
+        new_email_bool = true;
+    } else {
+        new_email_bool = false;
+    }
+} while (new_email_bool == true);
