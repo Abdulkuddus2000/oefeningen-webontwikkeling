@@ -118,31 +118,40 @@ let pokemons: string[] = [
     "Spearow",
 ];
 
+
+for (let i = 0; i < pokemons.length; i++) {
+    console.log(`${i}. ${pokemons[i]}`);
+}
+
 let team: string[] = [];
-let index: number | string = "";
+let input: string = "";
+let choice: number;
 let correctInput: boolean = true;
 
 do {
-    index = rl.question("Welke pokemon wil je in je team? [0-20: ]");
+    input = rl.question("Welke pokemon wil je in je team? [0-20]: ");
     
-    if (index == "STOP") { // check op getal of STOP
+    if (input == "STOP") { // check op getal of STOP
         correctInput = false;
     }
-    else { // check of pokemon al in team ziet
-        parseInt(number); // input casten naar een Number
-        console.log(typeof index);
-        // for (let i = 0; i < team.length; i++) {
-        //     if (index == team[i]) {
-        //         console.log("Deze pokemon zit al in je team");
-        //     }
-        // }
-        // index = rl.question("Welke pokemon wil je in je team? [0-20: ]");
 
-        // if(index > pokemons.length)
+    else {
+        choice = parseInt(input); // input casten naar een Number
+
+        // check of het een geldig nummer is
+        if (isNaN(choice) || choice < 0 || choice >= pokemons.length) {
+            console.log("Geef een geldig nummer tussen 0 en 20.");
+        }
+        const selectedPokemon = pokemons[choice];
+
+        // check op dubbele
+        if (team.includes(selectedPokemon)) {
+            console.log("Deze pokemon zit al in je team");
+        } else {
+            team.push(selectedPokemon);
+            console.log(`${selectedPokemon} toegevoegd aan je team.`);
+        }
     }
-
-    
-    
 
 } while (correctInput = true);
 

@@ -107,26 +107,48 @@ totaal = bedrag * (1 + (interest / 100))^jaren
 
 
 // oefening 7 - name from email
+// let email: string;
+// let first_letter: string;
+// let dot_location: number;
+// let lastname: string;
+// let new_email: string | boolean = false;
 
-let new_email_bool;
+// do {
+//     email = rl.question("Whats your email: ");
+//     first_letter = email[0].toUpperCase() + ".";
+//     dot_location = email.indexOf(".");
+//     lastname = email.substring(dot_location+1, email.indexOf("@"));
+
+//     console.log("De naam is " + first_letter + " " + lastname.substring(0, 1).toUpperCase() + lastname.substring(1));
+//     new_email = rl.keyInYN("Do you want to enter a new email adress? ");
+    
+// } while (new_email == true);
+
+// console.log("Have a nice day!");
+
+// /////////////////////////////////////////////////////////////////////////
+// oefening 8 - Taxt Box
+
+let text: string;
+let amount: number;
+let character: string = "-";
+let line: string = "";
+    
 do {
-    let email: string = rl.question("Whats your email: ");
-    let new_email;
+    text = rl.question("Geef de tekst in: ");
+    amount = text.length;
+        
+    do {
+        line += character;
+    } while (line.length < amount);
+    
+    console.log(`+-${line}-+`);
+    console.log(`| ${text} |`);
+    console.log(`+-${line}-+`);
+    
+    amount = 0;
+    line = "";
+} while (amount != 0);
 
-    let first_letter = email[0].toUpperCase() + ".";
-    let dot_location = email.indexOf(".");
-    let lastname = email.substring(dot_location+1, email.indexOf("@"));
 
-    email = rl.question("Whats your email: ");
-    first_letter = email[0].toUpperCase() + ".";
-    dot_location = email.indexOf(".");
-    lastname = email.substring(dot_location+1, email.indexOf("@"));
-
-    console.log("De naam is " + first_letter + " " + lastname.substring(0, 1).toUpperCase() + lastname.substring(1));
-    new_email = rl.keyInYN("Do you want to enter a new email adress? ")
-    if (new_email === "y") {
-        new_email_bool = true;
-    } else {
-        new_email_bool = false;
-    }
-} while (new_email_bool == true);
+console.log();
