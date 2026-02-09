@@ -4,8 +4,9 @@ import * as rl from 'readline-sync';
 
 // oefening 1 - som van getallen
 
-// let amount: number = rl.questionInt("Hoeveel getallen wil je optellen? ");
+// const amount: number = rl.questionInt("Hoeveel getallen wil je optellen? ");
 // let myArray: number[] = new Array(amount);
+// let myArray: number[] = []; // best practice 
 
 // for (let i = 0; i < amount; i++) {
 //     myArray[i] = rl.questionInt(`Geef getal ${i + 1} in: `);
@@ -16,6 +17,12 @@ import * as rl from 'readline-sync';
 // for (let i = 0; i < myArray.length; i++) {
 //     sum += myArray[i];
 // }
+
+
+// met de array-methode:
+// const result = amount.reduce((accumulator, currentNUmber) => {
+//     return (accumulator += currentNUmber);
+// });
 
 // console.log(sum);
 
@@ -66,24 +73,55 @@ import * as rl from 'readline-sync';
 
 // console.log(newWord);
 
-let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+// let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-let input: string = rl.question("Enter a string: ");
-let result: string = "";
+// let input: string = rl.question("Enter a string: ");
+// let result: string = "";
 
-for (let i = 0; i < input.length; i++) {
-    let char = input[i].toLocaleLowerCase();
+// for (let i = 0; i < input.length; i++) {
+//     let char = input[i].toLocaleLowerCase();
     
-    let index = alphabet.indexOf(char);
+//     let index = alphabet.indexOf(char);
 
-    if (index != -1) {
-        let newIndex = (index + 13) % 26;
-        result += alphabet[newIndex];
-    } else {
-        result += input[i];
-    }
+//     if (index != -1) {
+//         let newIndex = (index + 13) % 26;
+//         result += alphabet[newIndex];
+//     } else {
+//         result += input[i];
+//     }
+// }
+
+// console.log(result);
+
+// oefening 5 - Pokemon Team
+let pokemon: string[] = [
+    "Bulbasaur",
+    "Ivysaur",
+    "Venusaur",
+    "Charmander",
+    "Charmeleon",
+    "Charizard",
+    "Squirtle",
+    "Wartortle",
+    "Blastoise",
+    "Caterpie",
+    "Metapod",
+    "Butterfree",
+    "Weedle",
+    "Kakuna",
+    "Beedrill",
+    "Pidgey",
+    "Pidgeotto",
+    "Pidgeot",
+    "Rattata",
+    "Raticate",
+    "Spearow",
+];
+
+let team: string[];
+
+for (let i = 0; i < pokemon.length; i++) {
+    console.log(pokemon[i]);
 }
-
-console.log(result);
 
 export {}
