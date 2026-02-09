@@ -94,7 +94,7 @@ import * as rl from 'readline-sync';
 // console.log(result);
 
 // oefening 5 - Pokemon Team
-let pokemon: string[] = [
+let pokemons: string[] = [
     "Bulbasaur",
     "Ivysaur",
     "Venusaur",
@@ -118,10 +118,37 @@ let pokemon: string[] = [
     "Spearow",
 ];
 
-let team: string[];
+let team: string[] = [];
+let index: number | string = "";
+let correctInput: boolean = true;
 
-for (let i = 0; i < pokemon.length; i++) {
-    console.log(pokemon[i]);
-}
+do {
+    index = rl.question("Welke pokemon wil je in je team? [0-20: ]");
+    
+    if (index == "STOP") { // check op getal of STOP
+        correctInput = false;
+    }
+    else { // check of pokemon al in team ziet
+        parseInt(number); // input casten naar een Number
+        console.log(typeof index);
+        // for (let i = 0; i < team.length; i++) {
+        //     if (index == team[i]) {
+        //         console.log("Deze pokemon zit al in je team");
+        //     }
+        // }
+        // index = rl.question("Welke pokemon wil je in je team? [0-20: ]");
+
+        // if(index > pokemons.length)
+    }
+
+    
+    
+
+} while (correctInput = true);
+
+
+
+
+
 
 export {}
