@@ -93,71 +93,79 @@ import * as rl from 'readline-sync';
 
 // console.log(result);
 
-// oefening 5 - Pokemon Team
-let pokemons: string[] = [
-    "Bulbasaur",
-    "Ivysaur",
-    "Venusaur",
-    "Charmander",
-    "Charmeleon",
-    "Charizard",
-    "Squirtle",
-    "Wartortle",
-    "Blastoise",
-    "Caterpie",
-    "Metapod",
-    "Butterfree",
-    "Weedle",
-    "Kakuna",
-    "Beedrill",
-    "Pidgey",
-    "Pidgeotto",
-    "Pidgeot",
-    "Rattata",
-    "Raticate",
-    "Spearow",
-];
+// oefening 4 - Pokemon Team
+// let pokemons: string[] = [
+//     "Bulbasaur",
+//     "Ivysaur",
+//     "Venusaur",
+//     "Charmander",
+//     "Charmeleon",
+//     "Charizard",
+//     "Squirtle",
+//     "Wartortle",
+//     "Blastoise",
+//     "Caterpie",
+//     "Metapod",
+//     "Butterfree",
+//     "Weedle",
+//     "Kakuna",
+//     "Beedrill",
+//     "Pidgey",
+//     "Pidgeotto",
+//     "Pidgeot",
+//     "Rattata",
+//     "Raticate",
+//     "Spearow",
+// ];
 
+// // overzicht tonen van alle pokemons
+// for (let i = 0; i < pokemons.length; i++) {
+//     console.log(`${i}. ${pokemons[i]}`);
+// }
 
-for (let i = 0; i < pokemons.length; i++) {
-    console.log(`${i}. ${pokemons[i]}`);
-}
+// let team: string[] = [];
+// let input: string = "";
+// let choice: number;
+// let correctInput: boolean = true;
 
-let team: string[] = [];
-let input: string = "";
-let choice: number;
-let correctInput: boolean = true;
-
-do {
-    input = rl.question("Welke pokemon wil je in je team? [0-20]: ");
+// do {
+//     input = rl.question("Welke pokemon wil je in je team? [0-20]: ");
     
-    if (input == "STOP") { // check op getal of STOP
-        correctInput = false;
-    }
+//     // check op getal of STOP
+//     if (input.toLowerCase().trim() == "stop") {
+//         correctInput = false;
+//         break;
+//     }
 
-    else {
-        choice = parseInt(input); // input casten naar een Number
+//     // input is een getal
+//     else {
+//         choice = parseInt(input); // input casten naar een Number
 
-        // check of het een geldig nummer is
-        if (isNaN(choice) || choice < 0 || choice >= pokemons.length) {
-            console.log("Geef een geldig nummer tussen 0 en 20.");
-        }
-        const selectedPokemon = pokemons[choice];
+//         // check of het een geldig nummer is
+//         if (isNaN(choice) || choice < 0 || choice >= pokemons.length) {
+//             console.log("Geef een geldig nummer tussen 0 en 20.");
+//             continue; // spring terug naar het begin van de loop zonder nog verder te gaan vanaf dit punt
+//         }
+//         const selectedPokemon = pokemons[choice];
 
-        // check op dubbele
-        if (team.includes(selectedPokemon)) {
-            console.log("Deze pokemon zit al in je team");
-        } else {
-            team.push(selectedPokemon);
-            console.log(`${selectedPokemon} toegevoegd aan je team.`);
-        }
-    }
+//         // check op dubbele
+//         if (team.includes(selectedPokemon)) {
+//             console.log("Deze pokemon zit al in je team");
+//         } else {
+//             team.push(selectedPokemon);
+//             console.log(`${selectedPokemon} toegevoegd aan je team.`);
+//         }
+//     }
 
-} while (correctInput = true);
+// } while (correctInput);
+
+// console.log("Hier een overzicht van jouw pokemon team");
+// for (let i = 0; i < team.length; i++) {
+//     console.log(`${i+1}. ${team[i]}`);
+// }
+
+
+// oefening 5 - Todo List String
 
 
 
-
-
-
-export {}
